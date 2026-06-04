@@ -1,0 +1,181 @@
+---
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ardanazangel/styles — demo</title>
+    <style>
+      :root {
+        --white: #ffffff;
+        --black: #000000;
+        --black-o: #000000a6;
+        --grey: #a1a1a1;
+      }
+      body {
+        background-color: var(--black);
+        color: var(--white);
+      }
+      ::selection {
+        background: var(--white);
+        color: var(--black);
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="flex flex-col gap-16 px-8 py-16" style="max-width: 64em; margin: 0 auto;">
+
+      <!-- Header -->
+      <header class="flex flex-col gap-2">
+        <h1 class="text-5xl font-bold">@ardanazangel/styles</h1>
+        <p class="text-base opacity-50">Sistema de utilidades con escala fluid. <code>1em = var(--size-font)</code></p>
+      </header>
+
+      <!-- Escala fluid -->
+      <section class="flex flex-col gap-6">
+        <h2 class="text-xl font-semibold uppercase">Escala fluid</h2>
+        <p class="text-sm opacity-60">Redimensiona la ventana — todo escala proporcionalmente.</p>
+        <div class="flex flex-col gap-3">
+          <div class="flex items-center gap-4">
+            <span class="text-xs opacity-40 font-mono" style="width:4em">6xl</span>
+            <span class="text-6xl font-bold">Aa</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="text-xs opacity-40 font-mono" style="width:4em">4xl</span>
+            <span class="text-4xl font-bold">Aa</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="text-xs opacity-40 font-mono" style="width:4em">2xl</span>
+            <span class="text-2xl font-semibold">Aa</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="text-xs opacity-40 font-mono" style="width:4em">xl</span>
+            <span class="text-xl">Aa</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="text-xs opacity-40 font-mono" style="width:4em">base</span>
+            <span class="text-base">Aa</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="text-xs opacity-40 font-mono" style="width:4em">sm</span>
+            <span class="text-sm">Aa</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="text-xs opacity-40 font-mono" style="width:4em">xs</span>
+            <span class="text-xs">Aa</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Spacing -->
+      <section class="flex flex-col gap-6">
+        <h2 class="text-xl font-semibold uppercase">Spacing</h2>
+        <p class="text-sm opacity-60">Todo en <code>em</code> — escala con el viewport.</p>
+        <div class="flex items-end gap-2">
+          <div class="bg-[--white] opacity-20 rounded-sm" style="width:1em;height:1em"></div>
+          <div class="bg-[--white] opacity-30 rounded-sm" style="width:2em;height:2em"></div>
+          <div class="bg-[--white] opacity-40 rounded-sm" style="width:3em;height:3em"></div>
+          <div class="bg-[--white] opacity-50 rounded-sm" style="width:4em;height:4em"></div>
+          <div class="bg-[--white] opacity-60 rounded-sm" style="width:6em;height:6em"></div>
+          <div class="bg-[--white] opacity-70 rounded-sm" style="width:8em;height:8em"></div>
+        </div>
+        <p class="text-xs font-mono opacity-40">1 · 2 · 3 · 4 · 6 · 8</p>
+      </section>
+
+      <!-- Border radius -->
+      <section class="flex flex-col gap-6">
+        <h2 class="text-xl font-semibold uppercase">Border radius</h2>
+        <div class="flex items-center flex-wrap gap-6">
+          {[
+            ['none', 'rounded-none'],
+            ['sm',   'rounded-sm'],
+            ['md',   'rounded-md'],
+            ['lg',   'rounded-lg'],
+            ['xl',   'rounded-xl'],
+            ['2xl',  'rounded-2xl'],
+            ['3xl',  'rounded-3xl'],
+            ['full', 'rounded-full'],
+          ].map(([label, cls], i) => (
+            <div class="flex flex-col items-center gap-2">
+              <div class={`bg-[--white] w-16 h-16 ${cls}`} style={`opacity: ${0.2 + i * 0.1}`}></div>
+              <span class="text-xs font-mono opacity-40">{label}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Opacity -->
+      <section class="flex flex-col gap-6">
+        <h2 class="text-xl font-semibold uppercase">Opacity</h2>
+        <div class="flex items-center gap-3 flex-wrap">
+          {[10,20,30,40,50,60,70,80,90,100].map(n => (
+            <div class={`bg-[--white] rounded-md w-10 h-10 opacity-${n}`}></div>
+          ))}
+        </div>
+        <p class="text-xs font-mono opacity-40">10 → 20 → 30 → 40 → 50 → 60 → 70 → 80 → 90 → 100</p>
+      </section>
+
+      <!-- Grid -->
+      <section class="flex flex-col gap-6">
+        <h2 class="text-xl font-semibold uppercase">Grid</h2>
+        <div class="grid grid-cols-4 gap-3">
+          {[1,2,3,4].map(n => (
+            <div class="bg-[--white] opacity-20 rounded-md p-4 text-xs font-mono text-center">{n}</div>
+          ))}
+          <div class="bg-[--white] opacity-30 rounded-md p-4 text-xs font-mono text-center col-span-2">col-span-2</div>
+          <div class="bg-[--white] opacity-30 rounded-md p-4 text-xs font-mono text-center col-span-2">col-span-2</div>
+          <div class="bg-[--white] opacity-40 rounded-md p-4 text-xs font-mono text-center col-span-full">col-span-full</div>
+        </div>
+      </section>
+
+      <!-- Responsive -->
+      <section class="flex flex-col gap-6">
+        <h2 class="text-xl font-semibold uppercase">Responsive (desktop-first)</h2>
+        <p class="text-sm opacity-60">3 col → <code>md:</code> 2 col → <code>xs:</code> 1 col</p>
+        <div class="grid grid-cols-3 md:grid-cols-2 xs:grid-cols-1 gap-4">
+          {['card 1','card 2','card 3'].map(c => (
+            <div class="bg-[--white] opacity-20 rounded-xl p-6 text-sm font-mono">{c}</div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Easing -->
+      <section class="flex flex-col gap-6">
+        <h2 class="text-xl font-semibold uppercase">Easing tokens</h2>
+        <p class="text-sm opacity-60">Hover para ver cada curva.</p>
+        <div class="flex flex-wrap gap-4" id="easing-demo"></div>
+      </section>
+
+    </div>
+
+    <script>
+      const easings = [
+        '--i1','--o1','--io1',
+        '--i2','--o2','--io2',
+        '--i3','--o3','--io3',
+        '--i4','--o4','--io4',
+        '--i5','--o5','--io5',
+        '--i6','--o6','--io6',
+      ]
+      const container = document.getElementById('easing-demo')
+      easings.forEach(token => {
+        const el = document.createElement('div')
+        el.style.cssText = `
+          width: 5em; height: 5em; background: rgba(255,255,255,0.12);
+          border-radius: 0.5em; cursor: pointer; display: flex;
+          align-items: flex-end; justify-content: center;
+          padding-bottom: 0.5em; font-size: 0.6em; font-family: monospace;
+          color: white; opacity: 0.5;
+          transition: transform 0.6s var(${token}), opacity 0.3s;
+        `
+        el.textContent = token
+        el.addEventListener('mouseenter', () => { el.style.transform = 'scale(1.35)'; el.style.opacity = '1' })
+        el.addEventListener('mouseleave', () => { el.style.transform = 'scale(1)'; el.style.opacity = '0.5' })
+        container.appendChild(el)
+      })
+    </script>
+
+  </body>
+</html>
