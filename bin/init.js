@@ -152,6 +152,7 @@ console.log(`\n  ${dim('npm install github:ardanazangel/styles...')}`)
 try {
   execSync('npm install github:ardanazangel/styles', { stdio: 'inherit', cwd })
   log('@ardanazangel/styles instalado')
+  log('@ardanazangel/styles instalado')
 } catch {
   console.error('  ✗ Error instalando el paquete')
   process.exit(1)
