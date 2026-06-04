@@ -50,12 +50,12 @@ const borderRadius = {
 
 // Breakpoints alineados con el sistema del proyecto
 const breakpoints = {
-  sm: "480px", // mobile landscape
-  md: "768px", // tablet
-  lg: "992px", // desktop
-  xl: "1280px",
-  "2xl": "1536px",
-};
+  xl:  '1536px',  // wide desktop
+  lg:  '1280px',  // desktop
+  md:  '992px',   // tablet landscape
+  sm:  '768px',   // tablet portrait
+  xs:  '480px',   // mobile
+}
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
@@ -290,14 +290,14 @@ export default defineConfig({
         }
       }
     },
-    // Responsive
+    // Responsive (desktop-first, max-width)
     (matcher) => {
       for (const [bp, px] of Object.entries(breakpoints)) {
         if (matcher.startsWith(`${bp}:`)) {
           return {
             matcher: matcher.slice(bp.length + 1),
-            parent: `@media (min-width: ${px})`,
-          };
+            parent: `@media (max-width: ${px})`,
+          }
         }
       }
     },
