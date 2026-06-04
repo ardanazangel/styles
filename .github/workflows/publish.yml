@@ -16,6 +16,15 @@ jobs:
         with:
           node-version: 20
           registry-url: https://npm.pkg.github.com
-      - run: npm publish
+      - name: Publish if version changed
+        run: |
+          CURRENT=$(node -p "require('./package.json').version")
+          PUBLISHED=$(npm view @ardanazangel/styles version 2>/dev/null || echo "none")
+          if [ "$CURRENT" != "$PUBLISHED" ]; then
+            echo "Publishing v$CURRENT..."
+            npm publish
+          else
+            echo "v$CURRENT already published, skipping."
+          fi
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
