@@ -317,12 +317,6 @@ export default defineConfig({
           --size-container: clamp(var(--size-container-min), 100vw, var(--size-container-max));
           --size-font: calc(var(--size-container) / (var(--size-container-ideal) / var(--size-unit)));
 
-          /* ── Colores ───────────────────────────────────────────── */
-          --white: #ffffff;
-          --black: #000000;
-          --black-o: #000000a6;
-          --grey: #a1a1a1;
-
           /* ── Easing ────────────────────────────────────────────── */
           --i1:  cubic-bezier(.47, 0, .745, .715);
           --o1:  cubic-bezier(.39, .575, .565, 1);
@@ -382,8 +376,6 @@ export default defineConfig({
 
         body {
           font-size: var(--size-font);
-          color: var(--white);
-          background-color: var(--black);
           line-height: 1.5;
           position: relative;
           isolation: isolate;
@@ -397,7 +389,7 @@ export default defineConfig({
         ul, ol { list-style: none; }
         [hidden] { display: none !important; }
 
-        ::selection { background: var(--white); color: var(--black); }
+
       `,
     },
   ],
