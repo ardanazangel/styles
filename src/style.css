@@ -1,1 +1,16 @@
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --black-o: #000000a6;
+  --grey: #a1a1a1;
+}
 
+body {
+  color: var(--white);
+  background-color: var(--black);
+}
+
+::selection {
+  background: var(--white);
+  color: var(--black);
+}

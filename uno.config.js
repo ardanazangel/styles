@@ -50,12 +50,12 @@ const borderRadius = {
 
 // Breakpoints alineados con el sistema del proyecto
 const breakpoints = {
-  xl:  '1536px',  // wide desktop
-  lg:  '1280px',  // desktop
-  md:  '992px',   // tablet landscape
-  sm:  '768px',   // tablet portrait
-  xs:  '480px',   // mobile
-}
+  xl: "1536px", // wide desktop
+  lg: "1280px", // desktop
+  md: "992px", // tablet landscape
+  sm: "768px", // tablet portrait
+  xs: "480px", // mobile
+};
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
@@ -190,10 +190,16 @@ const rules = [
   ["font-serif", { "font-family": "var(--font-serif, serif)" }],
 
   // ── Colores via CSS vars del sistema ──────────────────────────────────────
-  [/^text-\[(.+)\]$/, ([, v]) => ({ color: v.startsWith('--') ? `var(${v})` : v })],
-  [/^bg-\[(.+)\]$/,   ([, v]) => ({ 'background-color': v.startsWith('--') ? `var(${v})` : v })],
+  [
+    /^text-\[(.+)\]$/,
+    ([, v]) => ({ color: v.startsWith("--") ? `var(${v})` : v }),
+  ],
+  [
+    /^bg-\[(.+)\]$/,
+    ([, v]) => ({ "background-color": v.startsWith("--") ? `var(${v})` : v }),
+  ],
   [/^text-(--[\w-]+)$/, ([, v]) => ({ color: `var(${v})` })],
-  [/^bg-(--[\w-]+)$/,   ([, v]) => ({ 'background-color': `var(${v})` })],
+  [/^bg-(--[\w-]+)$/, ([, v]) => ({ "background-color": `var(${v})` })],
 
   // ── Border radius ─────────────────────────────────────────────────────────
   ["rounded", { "border-radius": "0.375em" }],
@@ -297,7 +303,7 @@ export default defineConfig({
           return {
             matcher: matcher.slice(bp.length + 1),
             parent: `@media (max-width: ${px})`,
-          }
+          };
         }
       }
     },
@@ -379,7 +385,6 @@ export default defineConfig({
           line-height: 1.5;
           position: relative;
           isolation: isolate;
-          text-box: trim-both cap alphabetic;
         }
 
         h1, h2, h3, h4, h5, h6 { font-size: inherit; font-weight: inherit; }
