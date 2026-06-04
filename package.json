@@ -1,5 +1,5 @@
 {
-  "name": "my-css",
+  "name": "@ardanazangel/styles",
   "version": "0.1.0",
   "type": "module",
   "main": "uno.config.js",
@@ -10,6 +10,9 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   },
   "peerDependencies": {
     "unocss": ">=0.61.0"
