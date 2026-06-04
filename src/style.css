@@ -1,16 +1,16 @@
 :root {
-  --white: #ffffff;
-  --black: #000000;
-  --black-o: #000000a6;
-  --grey: #a1a1a1;
+    --white: #fafafa;
+    --black: #0d0d0d;
+    --black-o: #000000a6;
+    --grey: #a1a1a1;
 }
 
 body {
-  color: var(--white);
-  background-color: var(--black);
+    color: var(--white);
+    background-color: var(--black);
 }
 
 ::selection {
-  background: var(--white);
-  color: var(--black);
+    background: var(--white);
+    color: var(--black);
 }
