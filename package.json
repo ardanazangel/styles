@@ -1,0 +1,22 @@
+{
+  "name": "my-css",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "uno.config.js",
+  "exports": {
+    ".": "./uno.config.js"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "peerDependencies": {
+    "unocss": ">=0.61.0"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "unocss": "^0.61.0",
+    "@unocss/reset": "^0.61.0"
+  }
+}
