@@ -14,9 +14,6 @@
     "build": "vite build",
     "preview": "vite preview"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
   "dependencies": {
     "unocss": ">=0.61.0"
   },

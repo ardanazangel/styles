@@ -147,13 +147,10 @@ export default defineConfig({
 
 title('🎨 @ardanazangel/styles setup\n')
 
-// 1. .npmrc
-appendIfMissing('.npmrc', '@ardanazangel:registry=https://npm.pkg.github.com', '.npmrc — registry añadido')
-
-// 2. instalar
-console.log(`\n  ${dim('npm install @ardanazangel/styles...')}`)
+// 1. instalar
+console.log(`\n  ${dim('npm install github:ardanazangel/styles...')}`)
 try {
-  execSync('npm install @ardanazangel/styles', { stdio: 'inherit', cwd })
+  execSync('npm install github:ardanazangel/styles', { stdio: 'inherit', cwd })
   log('@ardanazangel/styles instalado')
 } catch {
   console.error('  ✗ Error instalando el paquete')
